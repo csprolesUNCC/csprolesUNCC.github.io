@@ -1,35 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<link rel="stylesheet" href="styles.css">
 		<title>Carson Sproles</title>
 		<script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
-		
+		<style>
+			body {
+				background-color: #FFFFFF;
+				color: #333333;
+				margin: 0;
+				padding: 0;
+				font-family: Sans-serif;
+			}
+
+			#page-wrapper {
+				height: 100%;
+				width: 100%;
+				max-width: 950px;
+				margin: auto;
+			}
+
+			/* Navigation Bar */
+			nav {
+				background-color: #005035;
+				padding: 10px 0;
+				text-align: center;
+				position: fixed;
+				top: 0;
+				width: 100%;
+				z-index: 1000;
+			}
+
+			nav ul {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+				display: flex;
+				justify-content: center;
+				gap: 20px;
+			}
+
+			nav ul li {
+				display: inline;
+			}
+
+			nav ul li a {
+				text-decoration: none;
+				color: white;
+				font-weight: bold;
+				padding: 10px 15px;
+				border-radius: 5px;
+				transition: background 0.3s;
+			}
+
+			nav ul li a:hover {
+				background-color: #023322;
+			}
+
+			/* Header */
+			header {
+				text-align: center;
+				padding: 100px 20px 20px; /* Adjusted padding so header is visible */
+			}
+
+			#logo-wrapper {
+				text-align: center;
+				border-bottom: 1px solid #006633;
+			}
+
+			#content-wrapper {
+				width: 100%;
+				max-width: 950px;
+				margin: auto;
+				text-align: center;
+				padding: 20px;
+			}			
+
+			h2 {
+				color: #005035;
+			}
+
+			h1 {
+				font-size: 36px;
+				text-align: center;
+				color: #005035;
+			}
+
+			/* Footer */
+			footer {
+				position: fixed;
+				bottom: 0;
+				width: 100%;
+				background-color: #fff;
+				color: #A49665;
+				text-align: center;
+				padding: 10px 0;
+				border-top: 1px solid #ccc;
+			}
+		</style>
 	</head>
 	<body>
-		<div id="page-wrapper">
-			<div id="header-wrapper">
-				<header>
-					<div id="header-container">
-						<div id="logo-wrapper">
-								<img src="itis3135/images/carson-primary.JPG" alt="image of carson sproles">
-						</div> <!-- /#logo-wrapper -->
-						<h1>Welcome to my website!</h1>
-					</div> <!-- /#header-container -->
-				</header>
-			</div> <!-- /#header-wrapper -->
-			<div id="content-wrapper">
-				<h2>My name is Carson Sproles. My links are below:</h2>
-			</div> <!-- /#content-wrapper -->
-			<div class="links">
-				<a href="https://github.com/csprolesUNCC" target="_blank">GitHub</a>
-				<a href="https://www.linkedin.com/in/carsonsproles/" target="_blank">LinkedIn</a>
-				<a href="https://csprolesuncc.github.io" target="_blank">GitHub Website Home</a>
-				<a href="https://webpages.charlotte.edu/csproles/" target="_blank">Charlotte Webpage Home</a>
+		<nav>
+			<ul>
+				<li><a href="https://github.com/csprolesUNCC" target="_blank">GitHub</a></li>
+				<li><a href="https://www.linkedin.com/in/carsonsproles/" target="_blank">LinkedIn</a></li>
+				<li><a href="https://csprolesuncc.github.io" target="_blank">GitHub Website</a></li>
+				<li><a href="https://webpages.charlotte.edu/csproles/" target="_blank">Charlotte Webpage</a></li>
+			</ul>
+		</nav>
+
+		<header>
+			<div id="logo-wrapper">
+				<img src="itis3135/images/carson-primary.JPG" alt="Portrait of Carson Sproles">
 			</div>
-		</div> <!-- /#page-wrapper -->
-		<div class="footer">
-			<a href = "itis3135/">Click to go to ITIS3135 Site</a> | Carson Sproles © 2025
+			<h1>Welcome to my website!</h1>
+		</header>
+
+		<div id="content-wrapper">
+			<h2>My name is Carson Sproles. My links are now in the navigation bar above.</h2>
 		</div>
+
+		<footer>
+			<a href="itis3135/">Click to go to ITIS3135 Site</a> | Designed by Carson Sproles, Certified in <a href="https://www.freecodecamp.org/certification/csproles/responsive-web-design">Responsive Web Design</a>
+		</footer>
 	</body>
 </html>
