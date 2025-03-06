@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography Hobby</title>
+    <link rel="icon" href="images/favicon.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header, footer {
+            background-color: #444;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main section {
+            display: none;
+            padding: 20px;
+            background-color: #fff;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        main section.active {
+            display: block;
+        }
+        figure img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        figcaption {
+            text-align: center;
+            font-style: italic;
+        }
+        footer {
+            margin-top: 20px;
+        }
+        .italic {
+            font-style: italic;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Photography Hobby</h1>
+    <nav>
+        <a onclick="showSection('home')">Home 🏠</a> |
+        <a onclick="showSection('about')">About 📷</a> |
+        <a onclick="showSection('schedule')">Best Times 🕒</a> |
+        <a onclick="showSection('locations')">Best Locations 🌎</a> |
+        <a onclick="showSection('how')">How-To 📖</a> |
+        <a onclick="showSection('why')">Why Photography? 💭</a> |
+        <a onclick="showSection('ai-prompts')">AI Prompts 🤖</a>
+    </nav>
+</header>
+
+<main>
+    <!-- Home -->
+    <section id="home" class="active">
+        <h2>Home</h2>
+        <p>Photography is the art of capturing moments, light, and emotion. It allows us to freeze time and tell stories through images.</p>
+        <p>From landscapes to portraits, photography blends creativity and technical skill, making it a versatile and rewarding hobby.</p>
+        <figure>
+            <img src="images/camera.jpg" alt="Camera">
+            <figcaption>My DSLR camera, always ready for the next adventure.</figcaption>
+        </figure>
+        <p class="italic">AI prompt: "Photorealistic image of a professional DSLR camera on a wooden desk with natural light."</p>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I’m an amateur photographer who enjoys capturing both nature and urban life. My passion started in high school.</p>
+        <p>Over the years, I’ve experimented with different styles, from street photography to wildlife photography.</p>
+        <figure>
+            <img src="images/portrait.jpg" alt="Self Portrait">
+            <figcaption>Me, out in the field capturing sunsets.</figcaption>
+        </figure>
+        <p class="italic">AI prompt: "Photorealistic image of a photographer standing in a field with a sunset in the background."</p>
+    </section>
+
+    <!-- Schedule/When -->
+    <section id="schedule">
+        <h2>Best Times</h2>
+        <p>The golden hour is one of the best times to shoot photos, providing soft, warm lighting.</p>
+        <p>Early mornings also offer beautiful light and minimal crowds.</p>
+        <figure>
+            <img src="images/sunrise.jpg" alt="Sunrise photo">
+            <figcaption>A stunning sunrise shot taken on my last trip.</figcaption>
+        </figure>
+        <p class="italic">AI prompt: "Photorealistic image of a sunrise over a lake with a photographer silhouette."</p>
+    </section>
+
+    <!-- Locations/Where -->
+    <section id="locations">
+        <h2>Best Locations</h2>
+        <p>Nature reserves and parks offer endless inspiration for photographers.</p>
+        <p>Urban settings provide incredible opportunities for street photography.</p>
+        <figure>
+            <img src="images/cityscape.jpg" alt="Cityscape">
+            <figcaption>Urban photography captures the pulse of the city.</figcaption>
+        </figure>
+        <p class="italic">AI prompt: "Photorealistic image of a bustling city street at night with colorful lights."</p>
+    </section>
+
+    <!-- How -->
+    <section id="how">
+        <h2>How-To</h2>
+        <p>Start with understanding your camera settings - aperture, shutter speed, and ISO.</p>
+        <p>Practice composing shots using the rule of thirds, leading lines, and framing techniques.</p>
+        <figure>
+            <img src="images/tripod.jpg" alt="Tripod setup">
+            <figcaption>Tripods help stabilize shots for long exposures.</figcaption>
+        </figure>
+        <p class="italic">AI prompt: "Photorealistic image of a camera on a tripod overlooking a mountain view."</p>
+    </section>
+
+    <!-- Why -->
+    <section id="why">
+        <h2>Why Photography?</h2>
+        <p>Photography allows us to preserve memories and express creativity.</p>
+        <p>It also encourages us to explore and see the world differently.</p>
+        <figure>
+            <img src="images/gallery.jpg" alt="Photo gallery">
+            <figcaption>A collection of my favorite shots over the years.</figcaption>
+        </figure>
+        <p class="italic">AI prompt: "Photorealistic image of a photography gallery wall with framed nature and urban photos."</p>
+    </section>
+
+    <!-- AI Prompts -->
+    <section id="ai-prompts">
+        <h2>AI Prompts</h2>
+        <ul>
+            <li>"Photorealistic image of a professional DSLR camera on a wooden desk with natural light."</li>
+            <li>"Photorealistic image of a photographer standing in a field with a sunset in the background."</li>
+            <li>"Photorealistic image of a sunrise over a lake with a photographer silhouette."</li>
+            <li>"Photorealistic image of a bustling city street at night with colorful lights."</li>
+            <li>"Photorealistic image of a camera on a tripod overlooking a mountain view."</li>
+            <li>"Photorealistic image of a photography gallery wall with framed nature and urban photos."</li>
+        </ul>
+    </section>
+</main>
+
+<footer>
+    <p>Designed by <a href="https://yourdesignfirmurl.com" target="_blank">Your Design Firm</a></p>
+</footer>
+
+<script>
+    function showSection(sectionId) {
+        document.querySelectorAll('main section').forEach(section => {
+            section.classList.remove('active');
+        });
+        document.getElementById(sectionId).classList.add('active');
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+/* Overall Page Styling */
+body {
+    background-color: #c9cfd4;  /* Light gray-blue */
+    color: #2c3e50;             /* Dark blue-gray */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center; /* Center body content */
+}
+
+/* Header and Heading Styles */
+h1, h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #005a87;
+    margin: 20px 0;
+}
+
+/* Navigation Bar - Centered and Horizontal */
+nav {
+    margin: 0 auto;
+    display: inline-block; /* Makes the nav fit its content and centers it */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+/* Navigation Link Styling */
+nav a, footer a {
+    text-decoration: none;
+    color: #0077cc;
+    font-weight: bold;
+}
+
+/* Visited links stay blue */
+nav a:visited, footer a:visited {
+    color: #0077cc;
+}
+
+/* Hover Effect */
+nav a:hover, footer a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content Box - Wider */
+main {
+    padding: 40px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    display: inline-block;
+    text-align: left; /* Inside text aligned left for readability */
+    max-width: 1000px; /* Wider box */
+    width: 90%; /* Also scales smaller screens */
+    box-sizing: border-box;
+    margin: 20px auto;
+}
+
+/* Image and Caption Centered */
+figure {
+    text-align: center;
+}
+
+figcaption {
+    font-style: italic;
+    color: #555;
+}
+
+/* Base List Styling */
+ul {
+    line-height: 1.8;
+    padding-left: 20px; /* Add some indentation */
+    text-align: left;
+    margin: 0 auto;
+    display: block; /* Don't force it inline */
+}
+
+/* Proper indentation for nested lists */
+ul ul {
+    padding-left: 20px; /* Further indent nested lists */
+}
+
+/* Optional: style list items if you want */
+li {
+    margin-bottom: 5px; /* Add some spacing between items */
+}
+
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #005a87;
+    color: white;
+}
+
+/* Footer Links */
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Visited Links */
+footer a:visited {
+    color: white;
+}
