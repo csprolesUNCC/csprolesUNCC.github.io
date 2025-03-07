@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carson Sproles' Copper Scorpion &bull; ITIS 3135 &bull; Hobby: Hiking</title>
+    <link rel="icon" href="../images/favicon.ico">
+	<script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+    <style>
+        /* Overall Page Styling */
+body {
+    background-color: #f7e3d4;  /* Warm beige */
+    color: #5a3e2b;             /* Rich brown */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Header and Heading Styles */
+h1, h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #b3541e;  /* Burnt orange */
+    margin: 20px 0;
+}
+
+/* Navigation Bar - Centered and Horizontal */
+nav {
+    margin: 0 auto;
+    display: inline-block; /* Centers nav */
+}
+
+nav a {
+    text-decoration: none;
+    color: #d65a31;  /* Warm coral */
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+nav a:visited {
+    color: #d65a31;  /* Same color for visited links */
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content Box - Wider */
+main {
+    padding: 40px;
+    background-color: #fff8f3;  /* Soft off-white */
+    border: 1px solid #e0c1a8;
+    border-radius: 8px;
+    display: inline-block;
+    text-align: left; /* Inside text aligned left for readability */
+    max-width: 1000px; /* Wider box */
+    width: 90%; /* Also scales smaller screens */
+    box-sizing: border-box;
+    margin: 20px auto;
+}
+
+/* Image and Caption Centered */
+figure {
+    text-align: center;
+    margin: 20px 0;
+}
+
+figcaption {
+    font-style: italic;
+    color: #7a4e3a;
+}
+
+/* Base List Styling */
+ul {
+    line-height: 1.8;
+    padding-left: 20px;
+    text-align: left;
+    margin: 0 auto;
+    display: block;
+}
+
+ul ul {
+    padding-left: 20px; /* Further indent nested lists */
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #b3541e; /* Same burnt orange */
+    color: white;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer a:visited {
+    color: white;
+}
+
+/* Section Management - Show/Hide Sections */
+section {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+
+
+    </style>
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('section').forEach((section) => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            showSection('what');  // Show "what" section by default (home page of hobby site)
+        });
+    </script>
+</head>
+
+<body>
+
+<header>
+    <h1>Carson Sproles' Hobby: Hiking</h1>
+    <nav>
+        <a href="javascript:void(0)" onclick="showSection('who')">About Me</a> |
+        <a href="javascript:void(0)" onclick="showSection('what')">Home</a> |
+        <a href="javascript:void(0)" onclick="showSection('when')">Best Times</a> |
+        <a href="javascript:void(0)" onclick="showSection('where')">Best Locations</a> |
+        <a href="javascript:void(0)" onclick="showSection('how')">How to Get Started</a> |
+        <a href="javascript:void(0)" onclick="showSection('why')">Why I Love It</a> |
+        <a href="javascript:void(0)" onclick="showSection('ai')">AI Prompts</a>
+    </nav>
+</header>
+
+<main>
+
+    <!-- WHO SECTION -->
+    <section id="who">
+        <h2>About Me</h2>
+        <p>My fascination and passion for the outdoors and hiking specifically began when I was young, and I joined the Boy Scouts. It was thorough this that I was able to experience nature and hiking in so many different places, and the love for doing so has stuck with me.</p>
+        <figure>
+            <img src="images/hiking_me.jpg" alt="Carson Sproles hiking Crowders Mountain" width="400">
+            <figcaption>Myself during a hike at Crowders Mountain.</figcaption>
+        </figure>
+		<figure>
+            <img src="images/baldyflag.jpg" alt="Carson Sproles at the peak of a mountain" width="400">
+            <figcaption>Myself at the peak of Mount Baldy in New Mexico.</figcaption>
+        </figure>
+    </section>
+
+    <!-- WHAT SECTION -->
+    <section id="what" class="active">
+        <h2>Welcome to my Hiking Hobby Page</h2>
+        <p>Hiking is the perfect blend of exercise and adventure, letting you explore the beauty of nature one step at a time, and giving you a chance to really disconnect from the hectic aspects of modern life.</p>
+        <figure>
+            <img src="images/arizona_sunset.jpg" alt="Sunset near Tucson, Arizona" width="400">
+            <figcaption>A scenic view of the sunset near Tucson, Arizona.</figcaption>
+        </figure>
+		<figure>
+            <img src="images/river.jpg" alt="River inside Linville Gorge, NC" width="400">
+            <figcaption>River inside Linville Gorge, NC.</figcaption>
+        </figure>
+    </section>
+
+    <!-- WHEN SECTION -->
+    <section id="when">
+        <h2>Best Times to Hike</h2>
+        <p>Spring and Fall are my favorite times to hike, with cooler weather and beautiful foliage. Still, the Summer months provide lush greenery and a variety of wildlife, while Winter months give way to bare trees and snowy paths.</p>
+        <figure>
+            <img src="images/philmontsummer.jpg" alt="View from New Mexico trail in Summer" width="400">
+            <figcaption>Plains along a trail in New Mexico during the summer.</figcaption>
+        </figure>
+		<figure>
+            <img src="images/unccfall.jpg" alt="Trail in UNCC botanical gardens during fall" width="400">
+            <figcaption>Red leaves above the trail in the UNCC botanical gardens in fall.</figcaption>
+        </figure>
+    </section>
+
+    <!-- WHERE SECTION -->
+    <section id="where">
+        <h2>Best Hiking Locations</h2>
+		<p>Personally, I'm not too picky about where I hike. However, there are some places I have been that I find myself thinking about for days after.</p>
+        <p>Some of my favorite locations include:</p>
+        <ul>
+            <li>Blue Ridge Mountains, North Carolina</li>
+            <li>Rocky Mountains, Colorado</li>
+            <li>Carson National Forest, New Mexico</li>
+        </ul>
+        <figure>
+            <img src="images/rockies.jpg" alt="View of the Rocky Mounatains in Colorado" width="400">
+            <figcaption>Stunning view of the vast Rocky Mounatains, near Estes Park, CO</figcaption>
+        </figure>
+		<figure>
+            <img src="images/overlook.jpg" alt="Log Hollow Overlook on the Blue Ridge Parkway" width="400">
+            <figcaption>Log Hollow Overlook on the Blue Ridge Parkway.</figcaption>
+        </figure>
+    </section>
+
+    <!-- HOW SECTION -->
+    <section id="how">
+        <h2>How to Get Started</h2>
+        <p>Hiking has a wide range of difficulties.</p>
+		<p>Some trails only require a bottle of water for a fun day. Others might require a heavy pack, ice spikes for your shoes, or even camping equipment.
+		<p>I recommend anyone new to hiking to start out with an easy one. There are plenty of light trails around the country, and plenty of resources such as AllTrails that allow users to read about the difficulty of these trails. As you hike, you can slowly work up to harder trails, and eventually get to the point of backpacking on long treks across multiple days!</p>
+        <figure>
+            <img src="images/hiking_gear.jpg" alt="Hiking gear" width="400">
+            <figcaption>Basic hiking gear essentials.</figcaption>
+        </figure>
+        <p><em>Image prompt: "Flat lay of hiking gear: boots, backpack, water bottle, map".</em></p>
+		<figure>
+            <img src="images/gear2.jpg" alt="Backpack camping gear" width="400">
+            <figcaption>More advanced hiking/backpacking equipment.</figcaption>
+        </figure>
+        <p><em>Image prompt: "Image of camping/backpacking equipment laid out".</em></p>
+    </section>
+
+    <!-- WHY SECTION -->
+    <section id="why">
+        <h2>Why I Love Hiking</h2>
+        <p>Hiking helps me clear my mind, stay healthy, and appreciate the natural beauty around us.</p>
+        <figure>
+            <img src="images/crowders.jpg" alt="View from Kings Pinnacle in NC" width="400">
+            <figcaption>View from Kings Pinnacle in NC.</figcaption>
+        </figure>
+		<figure>
+            <img src="images/bowie.jpg" alt="Dog on a hike" width="400">
+            <figcaption>My dog joining me for a hike in Uwharrie National Forest.</figcaption>
+        </figure>
+    </section>
+
+    <!-- AI PROMPTS SECTION -->
+    <section id="ai">
+        <h2>AI Prompts Used</h2>
+        <p>This page contains images generated using AI. Below are the prompts used:</p>
+        <ul>
+            <li>"Image of camping/backpacking equipment laid out"</li>
+            <li>"Flat lay of hiking gear: boots, backpack, water bottle, map"</li>
+        </ul>
+    </section>
+
+</main>
+
+<footer>
+    <p>
+        <a href="https://webpages.charlotte.edu/csproles/">UNCC Home</a> ||
+        <a href="../index.html">Return to Main Site</a>
+    </p>
+    <p>Designed by <strong>Sproles Software</strong> &copy; 2025</p>
+</footer>
+
+</body>
+</html>
