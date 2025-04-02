@@ -15,39 +15,67 @@ h1, h2 {
     margin: 20px 0;
 }
 
-/* Navigation Bar - Centered and Horizontal */
-nav {
-    margin: 0 auto;
-    display: inline-block; /* Makes the nav fit its content and centers it */
+/* Main Navigation - Blends with Page */
+.main-nav {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    font-size: 1.15em;
+    background: transparent; /* No background to blend in */
 }
 
-nav ul {
+.main-nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    text-align: center;
+    display: flex;
+    gap: 15px;
 }
 
-nav ul li {
+.main-nav ul li {
     display: inline-block;
-    margin: 0 10px;
 }
 
 /* Navigation Link Styling */
-nav a, footer a {
+.main-nav a, .subnav a, footer a {
     text-decoration: none;
-    color: #0077cc;
+    color: #005a87; /* Darker blue for contrast */
     font-weight: bold;
 }
 
 /* Visited links stay blue */
-nav a:visited, footer a:visited {
-    color: #0077cc;
+.main-nav a:visited, .subnav a:visited, footer a:visited {
+    color: #005a87;
 }
 
 /* Hover Effect */
-nav a:hover, footer a:hover {
+.main-nav a:hover, .subnav a:hover, footer a:hover {
     text-decoration: underline;
+}
+
+/* Sub Navigation Bar - Flexbox & Compact */
+.subnav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d6dbe1; /* Light gray-blue for subtle contrast */
+    padding: 5px 0; /* Adjusted padding */
+    font-size: 0.85em; /* Smaller text */
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.subnav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px; /* Consistent spacing */
+}
+
+.subnav ul li {
+    display: flex;
+    align-items: center;
 }
 
 /* Main Content Box - Wider */
@@ -92,7 +120,6 @@ ul ul {
 li {
     margin-bottom: 5px; /* Add some spacing between items */
 }
-
 
 /* Footer Styling */
 footer {
