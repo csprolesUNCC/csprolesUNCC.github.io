@@ -1,3 +1,5 @@
+
+
 /* Overall Page Styling */
 body {
     background-color: #c9cfd4;  /* Light gray-blue */
@@ -144,4 +146,35 @@ footer a:hover {
 /* Footer Visited Links */
 footer a:visited {
     color: white;
+}
+
+/* ============================== */
+/* ✅ MEDIA QUERIES FOR <main> ONLY */
+/* ============================== */
+
+/* Laptops / Small Desktops (981px - 1400px) */
+@media screen and (min-width: 981px) and (max-width: 1400px) {
+    main {
+        max-width: 1000px;
+        width: 90%;
+        margin: 20px auto;
+    }
+}
+
+/* Tablets (601px - 980px) */
+@media screen and (min-width: 601px) and (max-width: 980px) {
+    main {
+        max-width: 800px;
+        width: 95%;
+        margin: 20px auto;
+    }
+}
+
+/* Mobile Devices (370px - 600px) */
+@media screen and (min-width: 370px) and (max-width: 600px) {
+    main {
+        max-width: 100%;
+        width: 98%;
+        margin: 10px auto;
+    }
 }
