@@ -1,0 +1,213 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI NFL Draft Predictor – Project Overview</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f7fa;
+      color: #2c3e50;
+    }
+
+    header, footer {
+      background-color: #005a87;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    header h2 {
+      margin: 0.5rem 0;
+      font-size: 1.3em;
+    }
+
+    .main-nav {
+      background-color: #004768;
+      padding: 0.5rem 0;
+    }
+
+    .main-nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    .main-nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    h3, h4 {
+      color: #005a87;
+      margin-top: 2rem;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    figure {
+      margin: 1rem 0;
+      text-align: center;
+    }
+
+    figure img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    figcaption {
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
+
+    footer p {
+      margin: 0.5rem;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>CS Project Hub</h1>
+    <h2>AI NFL Draft Predictor – Project Overview</h2>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#">Project Overview</a></li>
+        <li><a href="#">Final Project</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <h3>Project Overview</h3>
+    <p>This project is a web-based application developed for my client Nolan, which hosts an AI-powered NFL Draft Predictor. The application allows users to view, analyze, and interact with AI-generated predictions for upcoming NFL drafts. It helps fans, fantasy football players, and analysts explore draft scenarios and player rankings powered by artificial intelligence.</p>
+
+    <h4>Intended Users</h4>
+    <ul>
+      <li>Football fans interested in draft predictions</li>
+      <li>Fantasy football participants</li>
+      <li>Analysts and bloggers who cover the NFL Draft</li>
+      <li>Students learning about AI in sports applications</li>
+    </ul>
+
+    <h4>Website Content Overview</h4>
+    <ul>
+      <li>Home – Welcome message, mission statement, and featured content</li>
+      <li>Draft Predictions – Interactive mock draft viewer</li>
+      <li>About the AI – Explanation of the algorithm used</li>
+      <li>Compare Prospects – Tool to compare player stats side-by-side</li>
+      <li>Contact – Feedback form to reach the client</li>
+    </ul>
+
+    <h3>Client Information</h3>
+    <ul>
+      <li><strong>Name:</strong> Nolan Witt</li>
+      <li><strong>Affiliation:</strong> NC State University</li>
+      <li><strong>Email:</strong> [private]</li>
+      <li><strong>Phone:</strong> [private]</li>
+    </ul>
+
+    <h3>Wireframe</h3>
+    <figure>
+      <img src="../images/index_page.drawio.png" alt="Homepage Wireframe">
+      <figcaption><a href="https://drive.google.com/file/d/1nUXEcrRCkhHTzL_vzd8beDLgSKJtrDpg/view?usp=sharing" target="_blank">View Full Wireframe on Draw.io</a></figcaption>
+    </figure>
+
+    <h3>Site Map</h3>
+    <figure>
+      <img src="../images/site_map.drawio.png" alt="Site Map">
+      <figcaption><a href="https://drive.google.com/file/d/1XKmhcgLIUaaOollXXwkINKMW3hMOXOKL/view?usp=sharing" target="_blank">View Full Site Map on Draw.io</a></figcaption>
+    </figure>
+
+    <h3>Page Design Summary</h3>
+    <ul>
+      <li>
+        <strong>Home Page</strong><br>
+        Purpose: Introduce the project and key features<br>
+        Users: General visitors<br>
+        Content: Hero section, intro to AI, highlights<br>
+        Interactions: Carousel, nav links
+      </li>
+      <li>
+        <strong>Draft Predictions</strong><br>
+        Purpose: Display current draft predictions<br>
+        Users: All<br>
+        Content: Mock draft table, filters<br>
+        Interactions: AJAX loading, filter dropdowns
+      </li>
+      <li>
+        <strong>About the AI</strong><br>
+        Purpose: Explain AI logic and data sources<br>
+        Users: Tech-savvy users<br>
+        Content: Flowchart, text blocks<br>
+        Interactions: Tooltips, collapsible sections
+      </li>
+      <li>
+        <strong>Compare Prospects</strong><br>
+        Purpose: Compare draft prospects<br>
+        Users: Advanced users<br>
+        Content: Dropdowns, stat tables<br>
+        Interactions: Chart.js, jQuery UI
+      </li>
+      <li>
+        <strong>Contact</strong><br>
+        Purpose: Collect feedback<br>
+        Users: Visitors<br>
+        Content: Contact form (name, email, message)<br>
+        Validations: Required fields, valid email<br>
+        Interactions: Form submit, confirmation alert
+      </li>
+    </ul>
+
+    <h3>Dynamic Functionality</h3>
+    <ul>
+      <li><strong>Draft Predictions:</strong> AJAX used to load data dynamically without page refresh</li>
+      <li><strong>Compare Prospects:</strong> Uses dropdowns + Chart.js for visual comparison</li>
+      <li><strong>Contact Page:</strong> Form validation using JavaScript</li>
+      <li><strong>Home Page:</strong> Image carousel using jQuery plugins</li>
+    </ul>
+
+    <h4>Inspiration Links</h4>
+    <ul>
+      <li><a href="https://www.nflmockdraftdatabase.com/" target="_blank">NFL Mock Draft Database</a></li>
+      <li><a href="https://www.nfl.com/prospects/" target="_blank">NFL.com Prospect Rankings</a></li>
+    </ul>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    Designed by <strong><a href="./sprolessoftware.com">Sproles Software</a>,</strong><a href="https://www.freecodecamp.org/certification/csproles/responsive-web-design"><i>Certified in Responsive Web Design</i></a>
+ &copy; <span id="year"></span></p>
+  </footer>
+
+</body>
+</html>
