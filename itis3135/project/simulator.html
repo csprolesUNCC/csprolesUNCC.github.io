@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NFL Draft Simulator</title>
+  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <div id="dynamic-header"></div>
+
+
+  <h1>NFL Draft Simulator</h1>
+  
+  <div class="container">
+    <div class="card">
+      <h2 class="card-heading">Draft Settings</h2>
+      <label>Select Your Team(s):</label>
+      <div class="team-grid" id="teamGrid"></div>
+
+      <div class="flex-row" style="margin-top: 20px;">
+        <div class="half">
+          <label for="draftClass">Draft Class</label>
+		  <select id="draftClass" onchange="updatePlayerList()">
+		  <option value="2025">2025</option>
+		  <option value="2024">2024</option>
+		  <option value="2023">2023</option>
+		  <option value="2022">2022</option>
+		  <option value="2021">2021</option>
+		  <option value="2020">2020</option>
+		  <option value="2019">2019</option>
+		  <option value="2018">2018</option>
+		  <option value="2017">2017</option>
+		  <option value="2016">2016</option>
+		  <option value="2015">2015</option>
+		</select>
+        </div>
+        <div class="half">
+          <label for="rounds">Rounds</label>
+          <select id="rounds">
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+			<option>6</option>
+			<option>7</option>
+	      </select>
+        </div>
+      </div>
+      <button onclick="startDraft()">Start Draft</button>
+    </div>
+
+    <div class="flex-row">
+      <div class="card half">
+        <h2>Best Available Players</h2>
+        <input type="text" id="playerSearch" placeholder="Search by name..." oninput="filterPlayers()">
+        <select id="positionFilter" onchange="filterPlayers()">
+          <option value="">All Positions</option>
+          <option value="QB">QB</option><option value="RB">RB</option><option value="WR">WR</option>
+          <option value="TE">TE</option><option value="OT">OT</option><option value="IOL">IOL</option>
+          <option value="C">C</option><option value="DL">DL</option><option value="EDGE">EDGE</option>
+          <option value="LB">LB</option><option value="CB">CB</option><option value="S">S</option>
+          <option value="K">K</option><option value="P">P</option>
+        </select>
+        <ul id="bestPlayers"></ul>
+      </div>
+
+      <div class="card half">
+        <h2>Draft History</h2>
+        <ul id="draftHistory">
+          <li>Draft not yet started</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts/main.js"></script>
+  <script src="scripts/layout.js"></script>
+  <script>loadHeader();</script>
+
+</body>
+</html>
