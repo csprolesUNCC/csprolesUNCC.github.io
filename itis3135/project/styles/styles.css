@@ -203,25 +203,19 @@ body {
   background-color: #f4f4f4;
 }
 
-/* CTA */
-.section-cta {
+/* Footer */
+
+.site-footer {
   background-color: #003366;
   color: white;
+  padding: 20px;
   text-align: center;
-  padding: 50px 20px;
+  font-size: 0.95em;
+  position: relative;
+  z-index: 10;
 }
 
-.cta-button {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 12px 30px;
-  font-size: 1em;
-  background: white;
-  color: #003366;
-  border-radius: 5px;
-  text-decoration: none;
-}
-
-.cta-button:hover {
-  background-color: #cce0ff;
+.site-footer p {
+  margin: 0;
+  line-height: 1.5;
 }
