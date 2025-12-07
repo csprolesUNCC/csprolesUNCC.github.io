@@ -5,9 +5,9 @@ class BlogNavbar extends HTMLElement {
         <div class="container nav-container">
             <a href="#" class="brand-logo">Carson Sproles</a>
             <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="pages/about.html">About</a></li>
-                <li><a href="pages/archive.html">Archive</a></li>
+                <li><a href="/portfolio/index.html">Home</a></li>
+                <li><a href="/portfolio/pages/about.html">About</a></li>
+                <li><a href="/portfolio/pages/archive.html">Archive</a></li>
                 <li><a href="#" class="btn-subscribe">Subscribe (Not yet implemented)</a></li>
             </ul>
         </div>
@@ -22,16 +22,16 @@ class BlogSidebar extends HTMLElement {
       <aside class="sidebar">
         <div class="widget">
             <h3>About Me</h3>
-            <p>Hi, I'm Carson. I'm a developer passionate about clean code and user interfaces. Currently working on full-stack projects.</p>
+            <p>Hi, I'm Carson. I am a Comp Sci graduate from UNCC, and this site allows me to practice my skills and share my thoughts with the world.</p>
         </div>
 
         <div class="widget">
-            <h3>Categories</h3>
+            <h3>Additional Links</h3>
             <ul class="category-list">
-                <li><a href="#">Tutorials</a></li>
-                <li><a href="#">Career</a></li>
-                <li><a href="#">Snippets</a></li>
-                <li><a href="#">Lifestyle</a></li>
+                <li><a href="https://www.linkedin.com/in/carsonsproles/">LinkedIn</a></li>
+                <li><a href="https://github.com/csprolesUNCC">GitHub</a></li>
+                <li><a href="https://github.com/csprolesUNCC">Instagram</a></li>
+                <li><a href="/index.html">Root Site</a></li>
             </ul>
         </div>
       </aside>
