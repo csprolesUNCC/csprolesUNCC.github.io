@@ -10,57 +10,53 @@
     <style>
         /* Overall Page Styling */
 body {
-    background-color: #f7e3d4;  /* Warm beige */
-    color: #5a3e2b;             /* Rich brown */
+    background-color: #f7e3d4;
+    color: #5a3e2b;
     font-family: 'Courier New', sans-serif;
     margin: 0;
     padding: 0;
     text-align: center;
 }
 
-/* Header and Heading Styles */
 h1, h2 {
     font-family: 'Courier New', sans-serif;
-    color: #b3541e;  /* Burnt orange */
+    color: #b3541e;
     margin: 20px 0;
 }
 
-/* Navigation Bar - Centered and Horizontal */
 nav {
     margin: 0 auto;
-    display: inline-block; /* Centers nav */
+    display: inline-block;
 }
 
 nav a {
     text-decoration: none;
-    color: #d65a31;  /* Warm coral */
+    color: #d65a31;
     font-weight: bold;
     margin: 0 10px;
 }
 
 nav a:visited {
-    color: #d65a31;  /* Same color for visited links */
+    color: #d65a31;
 }
 
 nav a:hover {
     text-decoration: underline;
 }
 
-/* Main Content Box - Wider */
 main {
     padding: 40px;
-    background-color: #fff8f3;  /* Soft off-white */
+    background-color: #fff8f3;
     border: 1px solid #e0c1a8;
     border-radius: 8px;
     display: inline-block;
-    text-align: left; /* Inside text aligned left for readability */
-    max-width: 1000px; /* Wider box */
-    width: 90%; /* Also scales smaller screens */
+    text-align: left;
+    max-width: 1000px;
+    width: 90%;
     box-sizing: border-box;
     margin: 20px auto;
 }
 
-/* Image and Caption Centered */
 figure {
     text-align: center;
     margin: 20px 0;
@@ -71,7 +67,6 @@ figcaption {
     color: #7a4e3a;
 }
 
-/* Base List Styling */
 ul {
     line-height: 1.8;
     padding-left: 20px;
@@ -81,19 +76,18 @@ ul {
 }
 
 ul ul {
-    padding-left: 20px; /* Further indent nested lists */
+    padding-left: 20px;
 }
 
 li {
     margin-bottom: 5px;
 }
 
-/* Footer Styling */
 footer {
     text-align: center;
     margin-top: 20px;
     padding: 10px;
-    background-color: #b3541e; /* Same burnt orange */
+    background-color: #b3541e;
     color: white;
 }
 
@@ -111,7 +105,6 @@ footer a:visited {
     color: white;
 }
 
-/* Section Management - Show/Hide Sections */
 section {
     display: none;
 }
@@ -132,7 +125,7 @@ section {
         }
 
         document.addEventListener("DOMContentLoaded", () => {
-            showSection('what');  // Show "what" section by default (home page of hobby site)
+            showSection('what');  
         });
     </script>
 </head>
