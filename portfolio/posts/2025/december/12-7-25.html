@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Power of CSS Variables - Carson.Blog</title>
+    <link rel="stylesheet" href="/portfolio/styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Merriweather:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
+    <script src="/portfolio/scripts/components.js" defer></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="brand-logo">Carson.Blog</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#" class="btn-subscribe">Subscribe</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container main-layout" style="margin-top: 60px;">
+        
+        <main class="single-post">
+            
+            <article>
+                <header class="post-header">
+                    <span class="category-tag">Web Development</span>
+                    <h1>The Power of CSS Variables: A Game Changer for Theming</h1>
+                    <div class="post-meta">Dec 7, 2025 • Carson Sproles</div>
+                </header>
+
+                <div class="post-content">
+                    <p>When I started web development, changing a color scheme meant using "Find and Replace" across a massive stylesheet. It was tedious and prone to errors. Enter <strong>CSS Custom Properties</strong> (also known as CSS Variables).</p>
+
+                    <p>In this post, I'll explain why I switched to variables for this very blog.</p>
+
+                    <h3>What are CSS Variables?</h3>
+                    <p>CSS variables allow you to store specific values to be reused throughout your document. They are set using custom property notation (e.g., <code>--main-color: black;</code>) and are accessed using the <code>var()</code> function.</p>
+
+                    <blockquote>
+                        "CSS Variables are like buckets where you store values. If you want to change the color of your entire site, you just change the paint in the bucket, not every wall in the house."
+                    </blockquote>
+
+                    <h3>The Syntax</h3>
+                    <p>Here is how I defined the University of South Carolina colors for this site:</p>
+
+                    <pre><code>:root {
+    --primary-color: #73000a; /* Garnet */
+    --accent-color: #000000;  /* Black */
+}
+
+button {
+    background-color: var(--primary-color);
+}</code></pre>
+
+                    <h3>Why Use Them?</h3>
+                    <ul>
+                        <li><strong>Maintainability:</strong> Change one line of code to update the whole site.</li>
+                        <li><strong>Readability:</strong> <code>var(--primary-color)</code> is easier to understand than <code>#73000a</code>.</li>
+                        <li><strong>Responsiveness:</strong> You can redefine variables inside media queries for mobile-specific layouts.</li>
+                    </ul>
+
+                    <p>Give them a try in your next project!</p>
+                </div>
+
+                <div class="post-footer">
+                    <a href="index.html">← Back to Home</a>
+                </div>
+            </article>
+
+        </main>
+
+        <aside class="sidebar">
+            <div class="widget">
+                <h3>About Me</h3>
+                <p>Hi, I'm Carson. I'm a developer passionate about clean code and user interfaces. Currently working on full-stack projects.</p>
+            </div>
+
+            <div class="widget">
+                <h3>Categories</h3>
+                <ul class="category-list">
+                    <li><a href="#">Tutorials</a></li>
+                    <li><a href="#">Career</a></li>
+                    <li><a href="#">Snippets</a></li>
+                    <li><a href="#">Lifestyle</a></li>
+                </ul>
+            </div>
+        </aside>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Carson Sproles. Built with HTML & CSS.</p>
+    </footer>
+
+</body>
+</html>
