@@ -3,7 +3,7 @@ class BlogNavbar extends HTMLElement {
     this.innerHTML = `
       <nav class="navbar">
         <div class="container nav-container">
-            <a href="#" class="brand-logo">Carson Sproles</a>
+            <a href="/portfolio/index.html" class="brand-logo">Carson Sproles</a>
             <ul class="nav-links">
                 <li><a href="/portfolio/index.html">Home</a></li>
                 <li><a href="/portfolio/pages/about.html">About</a></li>
