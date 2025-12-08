@@ -27,7 +27,6 @@ class BlogNavbar extends HTMLElement {
                 <li><a href="/blog/index.html">Home</a></li>
                 <li><a href="/blog/pages/about.html">About</a></li>
                 <li><a href="/blog/pages/archive.html">Archive</a></li>
-                <li><a href="#" class="btn-subscribe">Subscribe (Not yet implemented)</a></li>
                 <li>
                     <button onclick="window.toggleTheme()" style="background:none; border:none; cursor:pointer; font-size:1.2rem; padding:0; margin-left:10px;" title="Toggle Dark Mode">
                         🌓

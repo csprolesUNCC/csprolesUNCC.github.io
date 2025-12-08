@@ -34,15 +34,6 @@
     color: #ffffff !important;
 }
 
-[data-theme="dark"] .btn-subscribe {
-    background-color: white;
-    color: #73000a !important;
-}
-
-[data-theme="dark"] .btn-subscribe:hover {
-    background-color: #e0e0e0;
-}
-
 [data-theme="dark"] .post-content blockquote {
     color: #333333;
     background-color: #f4f4f4;
@@ -112,17 +103,6 @@ a {
 
 .nav-links a:hover {
     color: var(--primary-color);
-}
-
-.btn-subscribe {
-    background-color: var(--primary-color);
-    color: white !important;
-    padding: 8px 16px;
-    border-radius: 4px;
-}
-
-.btn-subscribe:hover {
-    background-color: var(--accent-color);
 }
 
 .hero {
