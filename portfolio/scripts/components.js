@@ -21,8 +21,8 @@ class BlogSidebar extends HTMLElement {
     this.innerHTML = `
       <aside class="sidebar">
         <div class="widget">
-            <h3>About Me</h3>
-            <p>Hi, I'm Carson. I am a Comp Sci graduate from UNCC, and this site allows me to practice my skills and share my thoughts with the world.</p>
+            <h3>Current Thoughts</h3>
+            <p>Man, the Hurricanes need to get it together.</p>
         </div>
 
         <div class="widget">
