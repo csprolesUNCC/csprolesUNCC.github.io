@@ -1,1 +1,59 @@
-This page will talk about me.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - My Personal Blog</title>
+    <link rel="icon" type="image/png" href="images/bowie.png">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Merriweather:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
+    <script src="scripts/components.js" defer></script>
+</head>
+<body>
+
+    <blog-navbar></blog-navbar>
+
+    <header class="hero">
+        <div class="container">
+            <h1>About Me</h1>
+            <p>A little background on who I am and what I do.</p>
+        </div>
+    </header>
+
+    <div class="container main-layout">
+        
+        <main class="about-container">
+            
+            <section class="about-profile">
+                <div class="profile-image-wrapper">
+                    <img src="images/me.jpg" alt="Carson Sproles" class="profile-pic">
+                </div>
+                
+                <div class="about-text">
+                    <h2>Hello, I'm Carson.</h2>
+                    <p>I'm a developer and writer based in [Your Location]. This website is a collection of my thoughts on technology, sports, and aviation.</p>
+                    
+                    <p>When I'm not coding web projects or working with Android Studio, you can usually find me watching hockey or playing video games.</p>
+
+                    <h3>My Tech Stack</h3>
+                    <ul class="tech-stack-list">
+                        <li>HTML & CSS</li>
+                        <li>JavaScript & APIs</li>
+                        <li>Android Development (Java/XML)</li>
+                        <li>UX Design</li>
+                    </ul>
+                </div>
+            </section>
+
+        </main>
+
+        <blog-sidebar></blog-sidebar>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Carson Sproles. Built with HTML & CSS.</p>
+    </footer>
+
+</body>
+</html>

@@ -280,3 +280,194 @@ pre code {
 blog-navbar, blog-sidebar {
     display: block;
 }
+
+/* --- Archive Page Styles --- */
+
+.archive-container {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+}
+
+.archive-year-group {
+    margin-bottom: 40px;
+}
+
+.archive-year-group:last-child {
+    margin-bottom: 0;
+}
+
+.archive-year-heading {
+    font-size: 2rem;
+    color: var(--primary-color);
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.archive-list {
+    list-style: none;
+}
+
+.archive-item {
+    display: flex;
+    align-items: baseline;
+    padding: 12px 0;
+    border-bottom: 1px solid #f4f4f4;
+    transition: transform 0.2s ease;
+}
+
+.archive-item:hover {
+    transform: translateX(5px);
+}
+
+.archive-item:last-child {
+    border-bottom: none;
+}
+
+.archive-date {
+    font-family: 'Courier New', monospace; /* Monospace aligns dates nicely */
+    font-size: 0.9rem;
+    color: var(--text-light);
+    min-width: 80px; /* Ensures alignment of titles */
+    flex-shrink: 0;
+}
+
+.archive-details {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Adjust layout for larger screens to put tags next to title */
+@media (min-width: 600px) {
+    .archive-details {
+        flex-direction: row;
+        align-items: baseline;
+        width: 100%;
+    }
+    
+    .archive-title {
+        margin-right: 15px;
+    }
+}
+
+.archive-title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--text-main);
+    text-decoration: none;
+}
+
+.archive-title:hover {
+    color: var(--primary-color);
+}
+
+.archive-tags .tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    background: #eee;
+    color: var(--text-light);
+    padding: 2px 8px;
+    border-radius: 12px;
+    margin-right: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.archive-tags .tag:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* --- About Page Styles --- */
+
+.about-container {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+}
+
+.about-profile {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start; /* Aligns top of image with top of text */
+}
+
+.profile-image-wrapper {
+    flex-shrink: 0; /* Prevents image from getting squished */
+    width: 250px;
+}
+
+.profile-pic {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Rounded corners */
+    border: 3px solid #eee; /* Subtle border */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.about-text h3 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    color: var(--accent-color);
+}
+
+.about-text p {
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+    color: var(--text-main);
+}
+
+.tech-stack-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tech-stack-list li {
+    background: #f4f4f4;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--text-light);
+    border: 1px solid #ddd;
+}
+
+/* Mobile Responsive adjustment for About Page */
+@media (max-width: 768px) {
+    .about-profile {
+        flex-direction: column; /* Stacks items vertically */
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-image-wrapper {
+        width: 200px;
+        margin-bottom: 20px;
+    }
+
+    .about-text h2 {
+        font-size: 1.8rem;
+    }
+    
+    .tech-stack-list {
+        justify-content: center;
+    }
+}

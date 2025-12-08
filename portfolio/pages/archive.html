@@ -1,1 +1,55 @@
-This is the page where viewers will be able to view all of the posts on the site. Only the most recent one will be shown on the front page.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archives - My Personal Blog</title>
+    <link rel="icon" type="image/png" href="images/bowie.png">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Merriweather:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
+    <script src="scripts/components.js" defer></script>
+</head>
+<body>
+
+    <blog-navbar></blog-navbar>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Archives</h1>
+            <p>A complete history of my posts.</p>
+        </div>
+    </header>
+
+    <div class="container main-layout">
+        
+        <main class="archive-container">
+            
+            <div class="archive-year-group">
+                <h2 class="archive-year-heading">2025</h2>
+                
+                <ul class="archive-list">
+                    <li class="archive-item">
+                        <span class="archive-date">Dec 07</span>
+                        <div class="archive-details">
+                            <a href="../posts/2025/december/12-7-25.html" class="archive-title">Welcome to my personal site!</a>
+                            <div class="archive-tags">
+                                <span class="tag">Welcome</span>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+
+        </main>
+
+        <blog-sidebar></blog-sidebar>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Carson Sproles. Built with HTML & CSS.</p>
+    </footer>
+
+</body>
+</html>
