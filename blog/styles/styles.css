@@ -1,13 +1,23 @@
 :root {
     --primary-color: #73000a;
     --accent-color: #000000;
-    --bg-color: #d6d6d6;
+    --bg-color: #eeeeee;
     --card-bg: #FFFFFF;
     --text-main: #333333;
     --text-light: #666666;
     
     --font-heading: 'Inter', sans-serif;
     --font-body: 'Merriweather', serif;
+}
+
+/* --- Dark Mode Variables --- */
+[data-theme="dark"] {
+    --primary-color: #ff6b6b;
+    --accent-color: #ffffff;
+    --bg-color: #121212;
+    --card-bg: #1e1e1e;
+    --text-main: #e0e0e0;
+    --text-light: #a0a0a0;
 }
 
 * {
