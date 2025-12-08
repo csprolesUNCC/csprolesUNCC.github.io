@@ -12,12 +12,35 @@
 
 /* --- Dark Mode Variables --- */
 [data-theme="dark"] {
-    --primary-color: #ffffff;
-    --accent-color: #73000a;
-    --bg-color: #121212;
-    --card-bg: #1e1e1e;
-    --text-main: #e0e0e0;
-    --text-light: #a0a0a0;
+    --primary-color: #ff6b6b; 
+    --accent-color: #ffffff;
+    --bg-color: #121212;      
+    --card-bg: #1e1e1e;       
+    --text-main: #ffffff;
+    --text-light: #e0e0e0;
+}
+
+/* --- Dark Mode Specific Overrides --- */
+[data-theme="dark"] .navbar, 
+[data-theme="dark"] footer {
+    background-color: #73000a; 
+    border-color: #550000;
+}
+
+[data-theme="dark"] .navbar a,
+[data-theme="dark"] .brand-logo,
+[data-theme="dark"] footer,
+[data-theme="dark"] footer p {
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .btn-subscribe {
+    background-color: white;
+    color: #73000a !important;
+}
+
+[data-theme="dark"] .btn-subscribe:hover {
+    background-color: #e0e0e0;
 }
 
 * {
