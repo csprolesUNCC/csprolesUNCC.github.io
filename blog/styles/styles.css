@@ -12,8 +12,8 @@
 
 /* --- Dark Mode Variables --- */
 [data-theme="dark"] {
-    --primary-color: #ff6b6b;
-    --accent-color: #ffffff;
+    --primary-color: #ffffff;
+    --accent-color: #73000a;
     --bg-color: #121212;
     --card-bg: #1e1e1e;
     --text-main: #e0e0e0;
