@@ -40,6 +40,17 @@
     border-left-color: #73000a;
 }
 
+[data-theme="dark"] .archive-tags .tag {
+    background-color: #2d2d2d;
+    color: var(--primary-color);
+    border: 1px solid #444;
+}
+
+[data-theme="dark"] .archive-tags .tag:hover {
+    background-color: #3d3d3d;
+    color: #ff8888;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
