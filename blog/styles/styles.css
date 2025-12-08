@@ -43,6 +43,12 @@
     background-color: #e0e0e0;
 }
 
+[data-theme="dark"] .post-content blockquote {
+    color: #333333;
+    background-color: #f4f4f4;
+    border-left-color: #73000a;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
