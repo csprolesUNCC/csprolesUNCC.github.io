@@ -1,3 +1,22 @@
+const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+}
+
+window.toggleTheme = function() {
+    const current = document.documentElement.getAttribute('data-theme');
+    let targetTheme = "light";
+
+    if (current === "dark") {
+        targetTheme = "light";
+    } else {
+        targetTheme = "dark";
+    }
+
+    document.documentElement.setAttribute('data-theme', targetTheme);
+    localStorage.setItem('theme', targetTheme);
+};
+
 class BlogNavbar extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
@@ -9,6 +28,11 @@ class BlogNavbar extends HTMLElement {
                 <li><a href="/blog/pages/about.html">About</a></li>
                 <li><a href="/blog/pages/archive.html">Archive</a></li>
                 <li><a href="#" class="btn-subscribe">Subscribe (Not yet implemented)</a></li>
+                <li>
+                    <button onclick="window.toggleTheme()" style="background:none; border:none; cursor:pointer; font-size:1.2rem; padding:0; margin-left:10px;" title="Toggle Dark Mode">
+                        🌓
+                    </button>
+                </li>
             </ul>
         </div>
       </nav>
