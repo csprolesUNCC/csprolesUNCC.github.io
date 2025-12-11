@@ -45,7 +45,7 @@ class BlogSidebar extends HTMLElement {
       <aside class="sidebar">
         <div class="widget">
             <h3>Current Thoughts</h3>
-            <p>Man, the Hurricanes need to get it together.</p>
+            <p>Big game for the Canes and Bussi tonight.</p>
         </div>
 
         <div class="widget">
