@@ -94,7 +94,7 @@
 
 			main {
 				padding: 40px 20px;
-				text-align: center;
+				text-align: center; /* Center-aligns the initial h2 */
 			}
 
 			#content-wrapper {
@@ -108,16 +108,90 @@
 				font-weight: 400;
 				margin-bottom: 30px;
 			}
+			
+			/* New Project Section Styles */
+			#projects-container {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				gap: 40px;
+				padding: 0 20px;
+				text-align: left; /* Reset text alignment for project cards */
+			}
+
+			.project-card {
+				background-color: var(--color-light);
+				border-radius: 8px;
+				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+				overflow: hidden;
+				transition: transform 0.3s, box-shadow 0.3s;
+			}
+
+			.project-card:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+			}
+
+			.project-screenshot-wrapper {
+				width: 100%;
+				height: 200px; /* Fixed height for consistent look */
+				overflow: hidden;
+			}
+
+			.project-screenshot-wrapper img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover; /* Ensures image covers the area without distortion */
+				display: block;
+			}
+
+			.project-info {
+				padding: 20px;
+			}
+
+			.project-info h3 {
+				color: var(--color-primary);
+				font-size: 24px;
+				margin-top: 0;
+				margin-bottom: 10px;
+				font-weight: 700;
+			}
+
+			.project-info p {
+				font-size: 15px;
+				margin-bottom: 15px;
+			}
+
+			.project-info .collaborators {
+				font-size: 14px;
+				font-style: italic;
+				color: #666;
+				margin-bottom: 15px;
+			}
+
+			.project-link {
+				display: inline-block;
+				background-color: var(--color-secondary);
+				color: var(--color-light);
+				text-decoration: none;
+				font-weight: 600;
+				padding: 8px 15px;
+				border-radius: 4px;
+				transition: background-color 0.3s;
+			}
+
+			.project-link:hover {
+				background-color: #1e2b37;
+			}
+
+
+			/* Existing styles below */
 
 			.button-container {
-				display: flex;
-				justify-content: center;
-				gap: 20px;
-				margin-bottom: 20px;
-				flex-wrap: wrap; 
+				display: none; /* Hide the old button container */
 			}
 
 			.action-btn {
+				/* Keeping existing styles just in case, but they are now replaced by .project-link */
 				background-color: var(--color-primary);
 				color: var(--color-light);
 				text-decoration: none;
@@ -180,12 +254,86 @@
 					<h2>I'm Carson Sproles, a certified web designer and developer. View my professional profiles above and my projects below.</h2>
 				</div>
 
+				<div id="projects-container">
+					
+					<div class="project-card">
+						<div class="project-screenshot-wrapper">
+							<img src="itis3135/images/blog_screenshot.png" alt="Screenshot of Personal Site / Blog">
+						</div>
+						<div class="project-info">
+							<h3>Personal Site / Blog</h3>
+							<p>This is my personal site and blog where I document my day to day journey. It gives me an outlet to write and talk about things that I otherwise don't have the chance to.</p>
+							<p class="collaborators">Created By: Carson Sproles</p>
+							<a href="/blog/index.html" class="project-link" target="_blank">View Project</a>
+						</div>
+					</div>
+
+					<div class="project-card">
+						<div class="project-screenshot-wrapper">
+							<img src="itis3135/images/capstone_screenshot.png" alt="Screenshot of Capstone Project">
+						</div>
+						<div class="project-info">
+							<h3>Capstone Project (ITIS-4390)</h3>
+							<p>A comprehensive project demonstrating mastery in full-stack web development. Focused on scalability, security, and user experience. This project's focus was a full redesign of the whole foods app from the ground up.</p>
+							<p class="collaborators">Created By: Carson Sproles, Devin Washington, Carson Hill, Micai Harrison, Jhania Vitalis, Brady Bittner</p>
+							<a href="itis4390.html" class="project-link" target="_blank">View Project</a>
+						</div>
+					</div>
+					
+					<div class="project-card">
+						<div class="project-screenshot-wrapper">
+							<img src="itis3135/images/itis3135_screenshot.png" alt="Screenshot of ITIS-3135 Site">
+						</div>
+						<div class="project-info">
+							<h3>ITIS-3135 Web App Design Site</h3>
+							<p>A collection of assignments and explorations from the Web App Design course, focusing on accessibility, usability, and fundamental web technologies.</p>
+							<p class="collaborators">Created By: Carson Sproles</p>
+							<a href="itis3135/" class="project-link" target="_blank">View Project</a>
+						</div>
+					</div>
+
+					<div class="project-card">
+						<div class="project-screenshot-wrapper">
+							<img src="itis3135/images/lcdconnect_screenshot.png" alt="Screenshot of LCDConnect">
+						</div>
+						<div class="project-info">
+							<h3>LCDConnect</h3>
+							<p>A project for ITIS-3300, with a heavy focus on software requirements and testing. This project is an Indeed-style job application site, with full database implementation and core functionalities.</p>
+							<p class="collaborators">Created By: Carson Sproles, Logan Buchanan, Lane Dial, Louis Viveros-Zavaleta, Dylan Afrifa-Akwamoah</p>
+							<a href="https://lcdconnect.vercel.app" class="project-link" target="_blank">View Project</a>
+						</div>
+					</div>
+					
+					<div class="project-card">
+						<div class="project-screenshot-wrapper">
+							<img src="placeholder-trusty.jpg" alt="Screenshot of Trusty Da Horse">
+						</div>
+						<div class="project-info">
+							<h3>Trusty Da Horse</h3>
+							<p>A fun, creative project demonstrating front-end design skills and interactive elements. A showcase of modern CSS and basic JavaScript.</p>
+							<p class="collaborators">**Involved:** Carson Sproles (Solo Project)</p>
+							<a href="https://trustydahorse.com/index.html" class="project-link" target="_blank">View Project</a>
+						</div>
+					</div>
+					
+					<div class="project-card">
+						<div class="project-screenshot-wrapper">
+							<img src="placeholder-brown-equipment.jpg" alt="Screenshot of Brown Equipment">
+						</div>
+						<div class="project-info">
+							<h3>Brown Equipment</h3>
+							<p>A professional redesign of my current company's website. This prototype uses content from <a href="https://bemlaser.com">bemlaser.com</a>.</p>
+							<p class="collaborators">Created By: Carson Sproles</p>
+							<a href="https://brownequipment.vercel.app" class="project-link" target="_blank">View Project</a>
+						</div>
+					</div>
+
+				</div>
+				
 				<div class="button-container">
 					<a href="/blog/index.html" class="action-btn" target="_blank">Personal Site / Blog</a>
 					<a href="itis4390.html" class="action-btn" target="_blank">Capstone Project</a>
 					<a href="itis3135/" class="action-btn" target="_blank">ITIS-3135 Site</a>
-				</div>
-				<div class="button-container">
 					<a href="https://lcdconnect.vercel.app" class="action-btn" target="_blank">LCDConnect (ITIS-3300)</a>
 					<a href="https://trustydahorse.com/index.html" class="action-btn" target="_blank">Trusty Da Horse</a>
 					<a href="https://brownequipment.vercel.app" class="action-btn" target="_blank">Brown Equipment</a>
