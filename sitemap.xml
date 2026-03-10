@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Main Pages -->
+  <url>
+    <loc>https://csproles.com/</loc>
+  </url>
+  <url>
+    <loc>https://csproles.com/about.html</loc>
+  </url>
+  <url>
+    <loc>https://csproles.com/contract.html</loc>
+  </url>
+  <url>
+    <loc>https://csproles.com/introduction.html</loc>
+  </url>
+  <url>
+    <loc>https://csproles.com/itis4390.html</loc>
+  </url>
+
+  <!-- Blog Pages -->
+  <url>
+    <loc>https://csproles.com/blog/index.html</loc>
+  </url>
+  <url>
+    <loc>https://csproles.com/blog/pages/about.html</loc>
+  </url>
+  <url>
+    <loc>https://csproles.com/blog/pages/archive.html</loc>
+  </url>
+
+  <!-- Blog Posts 2025 -->
+  <url>
+    <loc>https://csproles.com/blog/posts/2025/december/12-7-25.html</loc>
+  </url>
+  <url>
+    <loc>https://csproles.com/blog/posts/2025/december/12-8-25.html</loc>
+  </url>
+  <url>
+    <loc>https://csproles.com/blog/posts/2025/december/12-9-25.html</loc>
+  </url>
+  <url>
+    <loc>https://csproles.com/blog/posts/2025/december/12-12-25.html</loc>
+  </url>
+  <url>
+    <loc>https://csproles.com/blog/posts/2025/december/12-14-25.html</loc>
+  </url>
+  <url>
+    <loc>https://csproles.com/blog/posts/2025/december/12-19-25.html</loc>
+  </url>
+
+  <!-- Blog Posts 2026 -->
+  <url>
+    <loc>https://csproles.com/blog/posts/2026/january/1-1-26.html</loc>
+  </url>
+  <url>
+    <loc>https://csproles.com/blog/posts/2026/march/3-10-26.html</loc>
+  </url>
+
+</urlset>
