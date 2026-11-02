@@ -1,0 +1,154 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Level 13 Save Editor</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+:root{--bg:#fff;--fg:#1a1a1a;--mut:#666;--line:#ccc;--acc:#2a6;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#161616;--fg:#eee;--mut:#999;--line:#444;--acc:#4c8}}
+:root[data-theme="dark"]{--bg:#161616;--fg:#eee;--mut:#999;--line:#444;--acc:#4c8}
+body{background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,sans-serif;max-width:780px;margin:0 auto;padding:16px}
+textarea,input,button{font:inherit;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:6px 10px}
+textarea{width:100%;height:110px;font-family:monospace;font-size:12px}
+button{cursor:pointer}button.p{background:var(--acc);color:#fff;border-color:var(--acc)}
+.row{display:flex;gap:8px;align-items:center;margin:6px 0;flex-wrap:wrap}.row code{flex:1;min-width:200px;word-break:break-all;font-size:12px}
+.mut{color:var(--mut);font-size:13px}input[type=number]{width:100px}
+.chips button{padding:3px 10px;border-radius:99px}
+h2{font-size:16px;margin:22px 0 6px;border-top:1px solid var(--line);padding-top:12px}
+details{margin-left:14px;font-family:monospace;font-size:12px}summary{cursor:pointer}
+.leaf{margin-left:14px;font-family:monospace;font-size:12px;word-break:break-all}
+#raw{height:260px}
+</style></head><body>
+<h1>Level 13 save editor</h1>
+<p class="mut">Runs entirely in your browser. Paste your exported save, decode it, edit, then copy the new save into the game's Import box. Keep a backup slot in the game first.</p>
+<textarea id="in" placeholder="Paste exported save here"></textarea>
+<div class="row"><button class="p" id="dec">Decode</button><span id="msg" class="mut"></span></div>
+<div id="ed" hidden>
+<h2>1. Find and edit values</h2>
+<div class="row chips" id="chips"></div>
+<div class="row"><input id="q" placeholder="Key names, comma separated (e.g. hope, evidence)" style="flex:1"><button id="go">Search</button></div>
+<div class="row"><span class="mut">For all shown numbers:</span><input type="number" id="n" value="100"><button id="setall">Set to</button><button id="addall">Add</button></div>
+<div id="list"></div>
+<h2>2. Browse the save structure</h2>
+<div id="tree"></div>
+<h2>3. Raw JSON (also works as a backup copy)</h2>
+<textarea id="raw"></textarea>
+<div class="row"><button id="applyraw">Apply raw JSON edits</button></div>
+<h2>4. Export</h2>
+<div class="row"><button class="p" id="enc">Encode new save</button><button id="cp">Copy</button></div>
+<textarea id="out" readonly></textarea>
+</div>
+<script>
+const KS="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+const has=(o,k)=>Object.prototype.hasOwnProperty.call(o,k);
+function _c(u,bpc,gc){
+  if(u==null)return"";
+  var i,value,dict={},toCreate={},c="",wc="",w="",enlarge=2,dsize=3,nb=2,data=[],dv=0,dp=0,ii;
+  function out(bit){dv=(dv<<1)|bit;if(dp==bpc-1){dp=0;data.push(gc(dv));dv=0}else dp++}
+  function writeBits(v,n){for(var k=0;k<n;k++){out(v&1);v>>=1}}
+  function emitW(){
+    if(has(toCreate,w)){
+      if(w.charCodeAt(0)<256){writeBits(0,nb);writeBits(w.charCodeAt(0),8)}
+      else{writeBits(1,nb);writeBits(w.charCodeAt(0),16)}
+      enlarge--;if(enlarge==0){enlarge=Math.pow(2,nb);nb++}
+      delete toCreate[w];
+    }else writeBits(dict[w],nb);
+    enlarge--;if(enlarge==0){enlarge=Math.pow(2,nb);nb++}
+  }
+  for(ii=0;ii<u.length;ii++){
+    c=u.charAt(ii);
+    if(!has(dict,c)){dict[c]=dsize++;toCreate[c]=true}
+    wc=w+c;
+    if(has(dict,wc))w=wc;
+    else{emitW();dict[wc]=dsize++;w=String(c)}
+  }
+  if(w!=="")emitW();
+  writeBits(2,nb);
+  while(true){dv=dv<<1;if(dp==bpc-1){data.push(gc(dv));break}else dp++}
+  return data.join("");
+}
+function _d(length,reset,gv){
+  var dict=[],next,enlarge=4,dsize=4,nb=3,entry="",result=[],i,w,bits,resb,maxp,power,c,
+  data={val:gv(0),position:reset,index:1};
+  for(i=0;i<3;i++)dict[i]=i;
+  function rd(n){bits=0;maxp=Math.pow(2,n);power=1;
+    while(power!=maxp){resb=data.val&data.position;data.position>>=1;
+      if(data.position==0){data.position=reset;data.val=gv(data.index++)}
+      bits|=(resb>0?1:0)*power;power<<=1}
+    return bits}
+  next=rd(2);
+  if(next==0)c=String.fromCharCode(rd(8));
+  else if(next==1)c=String.fromCharCode(rd(16));
+  else return"";
+  dict[3]=c;w=c;result.push(c);
+  while(true){
+    if(data.index>length)return"";
+    c=rd(nb);
+    if(c==0){dict[dsize++]=String.fromCharCode(rd(8));c=dsize-1;enlarge--}
+    else if(c==1){dict[dsize++]=String.fromCharCode(rd(16));c=dsize-1;enlarge--}
+    else if(c==2)return result.join("");
+    if(enlarge==0){enlarge=Math.pow(2,nb);nb++}
+    if(dict[c])entry=dict[c];
+    else if(c===dsize)entry=w+w.charAt(0);else return null;
+    result.push(entry);dict[dsize++]=w+entry.charAt(0);enlarge--;w=entry;
+    if(enlarge==0){enlarge=Math.pow(2,nb);nb++}
+  }
+}
+function compressB64(s){var r=_c(s,6,a=>KS.charAt(a));switch(r.length%4){case 1:return r+"===";case 2:return r+"==";case 3:return r+"="}return r}
+function decompressB64(s){if(s==null||s==="")return"";return _d(s.length,32,i=>KS.indexOf(s.charAt(i)))}
+
+var obj=null,shown=[],$=function(i){return document.getElementById(i)};
+var CH={Hope:"hope",Evidence:"evidence",Rumours:"rumour",Favour:"favour",Stamina:"stamina",Health:"health",Resources:"metal,water,food,rope,fuel,herbs,medicine,tools,concrete,fuel,silver,cash",Population:"population,rabbits",Perks:"perk",Upgrades:"upgrade"};
+function walk(o,p,pred,out){
+  if(o&&typeof o==="object"){for(var k in o){var np=p.concat([k]),v=o[k];
+    if((v===null||typeof v!=="object")&&pred(String(k).toLowerCase()))out.push(np);
+    walk(v,np,pred,out)}}
+}
+function get(p){var o=obj;for(var i=0;i<p.length;i++)o=o[p[i]];return o}
+function set(p,v){var o=obj;for(var i=0;i<p.length-1;i++)o=o[p[i]];o[p[p.length-1]]=v}
+function search(q){
+  var t=q.toLowerCase().split(",").map(function(s){return s.trim()}).filter(Boolean);
+  shown=[];if(!t.length){render();return}
+  walk(obj,[],function(k){return t.some(function(x){return k.indexOf(x)>=0})},shown);render();
+}
+function render(){
+  var el=$("list");el.innerHTML="";
+  $("msg").textContent=shown.length+" match(es)"+(shown.length>80?", showing 80":"");
+  if(!shown.length){el.innerHTML='<p class="mut">No matches.</p>';return}
+  shown.slice(0,80).forEach(function(p){
+    var v=get(p),r=document.createElement("div");r.className="row";
+    var c=document.createElement("code");c.textContent=p.join(" > ");
+    var i=document.createElement("input");i.type=typeof v==="number"?"number":"text";i.value=v;
+    i.onchange=function(){set(p,typeof v==="number"?Number(i.value):i.value);refreshRaw()};
+    r.appendChild(c);r.appendChild(i);el.appendChild(r);
+  });
+}
+function bulk(fn){shown.forEach(function(p){var v=get(p);if(typeof v==="number")set(p,fn(v))});render();refreshRaw()}
+function node(o,k,host){
+  if(o&&typeof o==="object"){
+    var d=document.createElement("details"),s=document.createElement("summary");
+    s.textContent=k+" ("+(Array.isArray(o)?"list ":"")+Object.keys(o).length+")";d.appendChild(s);
+    var done=false;d.ontoggle=function(){if(done||!d.open)return;done=true;
+      Object.keys(o).slice(0,200).forEach(function(kk){node(o[kk],kk,d)})};
+    host.appendChild(d);
+  }else{var l=document.createElement("div");l.className="leaf";l.textContent=k+": "+JSON.stringify(o);host.appendChild(l)}
+}
+function refreshRaw(){$("raw").value=JSON.stringify(obj,null,1)}
+Object.keys(CH).forEach(function(n){var b=document.createElement("button");b.textContent=n;
+  b.onclick=function(){$("q").value=CH[n];search(CH[n])};$("chips").appendChild(b)});
+$("dec").onclick=function(){
+  try{
+    var s=decompressB64($("in").value.trim());
+    if(!s)throw new Error("Could not decompress. Is this the full exported text?");
+    obj=JSON.parse(s);$("ed").hidden=false;
+    $("tree").innerHTML="";Object.keys(obj).forEach(function(k){node(obj[k],k,$("tree"))});
+    refreshRaw();$("q").value="hope";search("hope");
+  }catch(e){$("msg").textContent="Error: "+e.message}
+};
+$("go").onclick=function(){search($("q").value)};
+$("setall").onclick=function(){var n=Number($("n").value);bulk(function(){return n})};
+$("addall").onclick=function(){var n=Number($("n").value);bulk(function(v){return v+n})};
+$("applyraw").onclick=function(){
+  try{obj=JSON.parse($("raw").value);$("tree").innerHTML="";Object.keys(obj).forEach(function(k){node(obj[k],k,$("tree"))});shown=[];render();$("msg").textContent="Raw JSON applied."}
+  catch(e){$("msg").textContent="Invalid JSON: "+e.message}
+};
+$("enc").onclick=function(){$("out").value=compressB64(JSON.stringify(obj))};
+$("cp").onclick=function(){$("out").select();document.execCommand("copy")};
+</script></body></html>
